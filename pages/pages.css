@@ -1,0 +1,643 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+::selection {
+    color: lavender;
+    background: teal;
+   
+  } 
+body{
+    overflow-x: hidden;
+    background-color: rgb(155, 151, 151);
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.footer{
+    max-width: 78vw;
+    background: #333;
+    position: relative;
+    margin: 0;
+    margin-left: 22vw;
+    display: flex;
+    flex-direction: row;
+    height: 40vh;
+    border-top: 1px solid #666;
+
+
+}
+.logof img{
+    height: 70px;
+    margin-right: 10px;
+}
+.logof{
+    background: none;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+}
+.logof p{
+    color: lavender;
+    font-size: 10px;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70%;
+    margin: 15px;
+    width: 15%;
+    margin-top: 7%;
+}
+.column h1{
+    font-size: 15px;
+    color: lavender;
+}
+.column a{
+    text-decoration: none;
+    color: lavender;
+    font-size: 12px;
+    margin: 4px;
+
+}
+.column a:hover{
+    color: teal;
+  
+
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.row a{
+    padding: 5px;
+    border-radius: 50%;
+}
+.copyright{
+    border-top: 1px solid #555;
+    height: 100px;
+    background: #333;
+    width: 78vw;
+    margin-left: 22vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+.copyright p{
+    font-size: 13px;
+    margin: 5px;
+    color: lavender;
+}
+@media (max-width: 768px) {
+
+    .footer{
+        min-width: 100vw;
+        margin-left: 0;
+        overflow-x: hidden;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .logof{
+        width: 80%;
+    }
+    .copyright{
+        margin-left: 0;
+        width: 100vw;
+        height: 70px;
+    }
+    .column{
+        width: 80%;
+        margin-top: 0;
+    }
+    .column h1{
+        font-size: 12px;
+        border-bottom: 2px solid lavender;
+    }
+    .column a{
+        font-size:12px;
+    }
+
+}
+
+
+/* ======================full screen footer========================= */
+.afooter{
+    max-width: 100vw;
+    background: #333;
+    position: relative;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    height: 40vh;
+    border-top: 1px solid #666;
+
+
+}
+.alogof img{
+    height: 70px;
+    margin-right: 10px;
+}
+.alogof{
+    background: none;
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+}
+.alogof p{
+    color: lavender;
+    font-size: 10px;
+}
+.acolumn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 70%;
+    margin: 15px;
+    width: 15%;
+    margin-top: 7%;
+}
+.acolumn h1{
+    font-size: 15px;
+    color: lavender;
+}
+.acolumn a{
+    text-decoration: none;
+    color: lavender;
+    font-size: 12px;
+    margin: 4px;
+
+}
+.acolumn a:hover{
+    color: teal;
+  
+
+}
+.arow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.arow a{
+    padding: 5px;
+    border-radius: 50%;
+}
+.acopyright{
+    border-top: 1px solid #555;
+    height: 100px;
+    background: #333;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+.acopyright p{
+    font-size: 13px;
+    margin: 5px;
+    color: lavender;
+}
+
+/* =================for mobile devices===================== */
+@media (max-width: 768px) {
+
+    .afooter{
+        min-width: 100vw;
+        margin-left: 0;
+        overflow-x: hidden;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+    }
+    .alogof{
+        width: 80%;
+    }
+    .acopyright{
+        margin-left: 0;
+        width: 100vw;
+        height: 70px;
+    }
+    .acolumn{
+        width: 80%;
+        margin-top: 0;
+    }
+    .acolumn h1{
+        font-size: 12px;
+        border-bottom: 2px solid lavender;
+    }
+    .acolumn a{
+        font-size:12px;
+    }
+
+}
+
+.body{
+    background: #000;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.container1{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0;
+    margin-top: 5vw;
+    
+}
+.container1 h1{
+    margin-bottom: 80px;
+    color: lavender;
+}
+.container1 input[type=text]{
+    background: white;
+    width: 78vw;
+    max-width: 80vw;
+    outline: none;
+    border: none;
+    border-bottom: 5px solid teal;
+    height: 40px;
+    min-height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.container1 textarea{
+    margin: 2px;
+    background: white;
+    min-width: 78vw;
+    max-width: 80vw;
+    outline: none;
+    border: none;
+    border-bottom: 5px solid teal;
+    height: 300px;
+    min-height: 70px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+.buttons{
+    text-align: center;
+}
+.buttons input{
+    font-size: 20px;
+    margin: 10px 0px;
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: teal;
+    color: lavender;
+    font-weight: bold;
+    margin-bottom: 100px;
+    cursor: pointer;
+}
+.container1 label{
+    color: teal;
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    margin: 10px;
+    margin-bottom: 0;
+    /* border-bottom: 2px solid teal; */
+}
+.section{
+    border: 2px solid;
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 2px;
+    background: lavender;
+}
+.askbtn{
+    background: teal;
+    color:lavender;
+    padding: 15px 20px;
+    z-index: 10000;
+    display: inline;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 25px;
+}
+.askbtn .link{
+    font-weight: bold;
+
+}
+@media (max-width: 768px) {
+    .askbtn{
+        padding: 10px 6px;
+    
+    }
+    .askbtn .link{
+        font-size: 13px;
+        font-weight: bold;
+    }
+    .container1 input[type=text]{
+        font-size: 15px;
+    }
+    .container1 textarea{
+        font-size: 15px;
+    }
+    .container1 label{
+    font-size: 15px;
+    }
+    .container1 h1{
+        margin-bottom: 30px;
+        font-size: 20px;
+    }
+    .container1{
+        margin-top: 50px;
+        width: 90%;
+
+    }
+
+
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 99999;
+        background-color: black;
+        backdrop-filter: blur(10px);
+
+      
+        }
+        .cancel{
+          color: lavender;   
+          float: right; 
+          font-size: 40px;
+          cursor: pointer;
+          z-index: 1000;
+          position: absolute;
+          right: 23.5vw;
+        }
+      
+      
+        
+      
+      
+        .login-content{
+          background: black;
+          display: flex;
+          justify-content: center;  
+          padding: 30px;
+          border-radius: 3px;
+          border: 0.5px solid white;
+          box-shadow:  0 0 8px 2px rgba(230, 230, 250, 0.404);
+        }
+      
+        .login-content h2{
+          margin: 15px 0;
+          color: lavender;
+          text-transform: uppercase;
+          font-size: 2.9rem;
+          text-align: center;
+          width: 50vw;
+        }
+      
+        .login-content .input-div{
+          position: relative;
+            display: grid;
+            grid-template-columns: 7% 93%;
+            margin: 25px 0;
+            padding: 5px 0;
+            border-bottom: 2px solid #d9d9d9;
+        }
+        
+        .login-content .input-div.one{
+          margin-top: 0;
+        }
+      
+        .i{
+          color: #d9d9d9;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .i i{
+          transition: .3s;
+        }
+      
+        .input-div{
+          box-sizing: border-box;
+      
+        }
+        
+        .input-div > div{
+          position: relative;
+        height: 45px;
+      }
+      
+      .input-div > div > h5{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        transform: translateY(-50%);
+        color: #999;
+        font-size: 18px;
+        transition: .3s;
+      }
+      
+      .input-div:before, .input-div:after{
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        width: 0%;
+        height: 2px;
+        background-color: teal;
+        transition: .4s;
+      }
+      
+      
+      .input-div:before{
+        right: 50%;
+      }
+      
+      .input-div:after{
+        left: 50%;
+      }
+      .input-div.focus:before, .input-div.focus:after{
+        width: 50%;
+      }
+      
+      .input-div.focus > div > h5{
+        top: -15px;
+        font-size: 15px;
+      }
+        
+      .input-div.focus > .i > i{
+        color: teal;
+      }
+      
+      .input-div > div > input{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+        outline: none;
+        background: none;
+        padding: 0.5rem 0.7rem;
+        font-size: 1.2rem;
+        color: lavender;
+        font-family: 'poppins', sans-serif;
+      }
+      
+        .input-div.pass{
+          margin-bottom: 4px;
+        }
+      
+      
+        
+        .a{
+          display: block;
+          text-align: right;
+          text-decoration: none;
+          color: #999;
+          font-size: 0.9rem;
+          transition: .3s;
+          box-sizing: border-box;
+      
+        }
+        .a:hover{
+          color: teal;
+        }
+      
+        .btn{
+          display: block;
+          width: 100%;
+          height: 50px;
+          border-radius: 25px;
+          outline: none;
+          border: none;
+          background-image: linear-gradient(to right, teal,rgb(3, 165, 165), rgb(8, 196, 196));
+          background-size: 200%;
+          font-size: 1.2rem;
+          color: #fff;
+          font-family: 'Poppins', sans-serif;
+          text-transform: uppercase;
+          margin: 1rem 0;
+          transition: .5s;
+          box-sizing: border-box;
+          cursor: pointer;
+      
+        }
+         
+        .btn:hover{
+          background-position: right;
+        }
+        
+        
+        @media screen and (max-width: 1050px){
+          .container{
+            grid-gap: 5rem;
+          }
+        }
+        
+        @media screen and (max-width: 1000px){
+          form{
+            width: 290px;
+          }
+        
+          .login-content h2{
+            width: 100%;
+                font-size: 2.4rem;
+                margin: 8px 0;
+          }
+        
+          .img img{
+            width: 400px;
+          }
+        }
+        
+        @media screen and (max-width: 900px){
+          .container{
+            grid-template-columns: 1fr;
+          }
+        
+          .img{
+            display: none;
+          }
+        
+          .wave{
+            display: none;
+          }
+        
+          .login-content{
+            justify-content: center;
+          }
+        }
+        @media (max-width: 768px) {
+          .cancel{
+      
+            right: 15px;
+            font-size: 30px;
+      
+          }
+          .login-container {
+      width: 100vw;
+          }
+      
+        }
+      
+
+
+        .answerit{
+    margin-left: 22vw;
+    background-color: #444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 78vw;
+    padding: 20px;
+
+}
+.answerit textarea{
+    max-width:96% ;
+    min-width: 96%;
+    background: rgb(209, 209, 209);
+    border-radius: 5px;
+    outline:2px solid teal;
+    font-size: 15px;
+    color: #000;
+}
+.answerit input[type="submit"]{
+    width: 97%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    color: lavender;
+    background: teal;
+    border: none;
+}

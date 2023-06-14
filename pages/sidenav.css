@@ -1,0 +1,73 @@
+body{
+    width: 100vw;
+    overflow-x: hidden;
+
+}
+@media (max-width: 768px) {
+
+    .navside{
+  transition: 0.3s;
+  position: absolute;
+  width:0;
+  overflow: hidden;
+  z-index: 99999;
+
+}
+.navside ul{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.auth-btns{
+display: flex;
+width: 100vw;
+justify-content: center;
+
+}
+.signup-btnnav a{
+display: flex;
+cursor: pointer;
+border: none;
+background-color: teal;
+height: 35px;
+width: 80px;
+/* position: absolute; */
+/* right: 10px; */
+margin: 10px;
+border-radius: 15px;
+color: #e6e6fa;
+font-size: 17px;
+font-weight: bold;
+/* box-shadow: 2px 2px 1px 2px rgba(0, 128, 128, 0.507); */
+justify-content: center;
+align-items: center;
+text-decoration: none;
+}
+.login-btnnav a{
+display: flex;
+cursor: pointer;
+border: 3px solid teal;
+background-color:#e6e6fabb;
+height: 35px;
+width: 80px;
+/* position: absolute; */
+/* right: 100px; */
+margin: 10px;
+border-radius: 15px;
+color: teal;
+font-size: 17px;
+font-weight: bold;
+justify-content: center;
+align-items: center;
+text-decoration: none;}
+
+.answerit{
+    min-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  }
