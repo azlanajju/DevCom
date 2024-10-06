@@ -6,17 +6,17 @@ error_reporting(E_ALL);
 
 session_start();
 include("../conn.php");
-$name="";
+$name = "";
 if (isset($_SESSION['UserID'])) {
-    $userID = $_SESSION['UserID'];
-    $name = $_SESSION['Name'];
-    $loggedInBtn = '<button onclick="window.location.href=\'../logout.php\'">Logout</button>';
-    $askBtn = '    <div class="askbtn"><a class="link" href="./pages/ask.html">Ask a question</a></div>';
-    $loginBtn = '';
+  $userID = $_SESSION['UserID'];
+  $name = $_SESSION['Name'];
+  $loggedInBtn = '<button onclick="window.location.href=\'../logout.php\'">Logout</button>';
+  $askBtn = '    <div class="askbtn"><a class="link" href="./pages/ask.html">Ask a question</a></div>';
+  $loginBtn = '';
 } else {
-    $loggedInBtn = '<button onclick="window.location.href=\'./pages/signup.php\'">Signup</button>';
-    $loginBtn = '<button onclick="window.location.href=\'./pages/login.php\'">Login</button>';
-    $askBtn = '';
+  $loggedInBtn = '<button onclick="window.location.href=\'./signup.php\'">Signup</button>';
+  $loginBtn = '<button onclick="window.location.href=\'./pages/login.php\'">Login</button>';
+  $askBtn = '';
 }
 
 // Retrieve data from the qna table
@@ -25,40 +25,40 @@ $sql = "SELECT qna.id, qna.UserID, qna.questionTitle, qna.problemDetails, qna.an
         FROM qna
         JOIN Users ON qna.UserID = Users.UserID
         ORDER BY qna.id DESC";
-        $result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $sql);
 
 $questionLoop = ''; // Initialize the variable outside the loop
 
 // Check if any rows are returned
 if (mysqli_num_rows($result) > 0) {
-    // Loop through each row
-    while ($row = mysqli_fetch_assoc($result)) {
-        // Retrieve the question details
-        $id = $row['id'];
-        $qname = $row['UserName'];
-        $userID = $row['UserID'];
-        $questionTitle = $row['questionTitle'];
-        $problemDetails = $row['problemDetails'];
-        $answerExpectations = $row['answerExpectations'];
-        $tags = $row['tags'];
-        $askedTime = $row['askedTime'];
-        $updatedTime = $row['updatedTime'];
-        $upvote = $row['upvote'];
-        $downvote = $row['downvote'];
+  // Loop through each row
+  while ($row = mysqli_fetch_assoc($result)) {
+    // Retrieve the question details
+    $id = $row['id'];
+    $qname = $row['UserName'];
+    $userID = $row['UserID'];
+    $questionTitle = $row['questionTitle'];
+    $problemDetails = $row['problemDetails'];
+    $answerExpectations = $row['answerExpectations'];
+    $tags = $row['tags'];
+    $askedTime = $row['askedTime'];
+    $updatedTime = $row['updatedTime'];
+    $upvote = $row['upvote'];
+    $downvote = $row['downvote'];
 
 
 
 
-                // Query to retrieve the number of answers for the current question
-                $answerCountQuery = "SELECT COUNT(*) AS answerCount, upvote, downvote FROM answers WHERE questionID = '$id'";
-                $answerCountResult = mysqli_query($conn, $answerCountQuery);
-                $answerCountRow = mysqli_fetch_assoc($answerCountResult);
-                $answerCount = $answerCountRow['answerCount'];
-                $upvote = $answerCountRow['upvote'];
-                $downvote = $answerCountRow['downvote'];
-                $votes = $upvote + $downvote ;
-        // Append the question HTML to the $questionLoop variable
-        $questionLoop .= '
+    // Query to retrieve the number of answers for the current question
+    $answerCountQuery = "SELECT COUNT(*) AS answerCount, upvote, downvote FROM answers WHERE questionID = '$id'";
+    $answerCountResult = mysqli_query($conn, $answerCountQuery);
+    $answerCountRow = mysqli_fetch_assoc($answerCountResult);
+    $answerCount = $answerCountRow['answerCount'];
+    $upvote = $answerCountRow['upvote'];
+    $downvote = $answerCountRow['downvote'];
+    $votes = $upvote + $downvote;
+    // Append the question HTML to the $questionLoop variable
+    $questionLoop .= '
         <div class="middle-nav">
             <div class="questions">
                 <div class="que">
@@ -67,7 +67,7 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="statement">' . $problemDetails . '</div>
                     <div class="cont">
                         <div class="answer">' . $answerCount . ' Answers</div>
-                        <div class="views">'. $votes .' Votes</div>
+                        <div class="views">' . $votes . ' Votes</div>
                         <div class="answer-btn">
                             <a href="./pages/answer.php?id=' . $id . '">Answers</a>
                         </div>
@@ -76,9 +76,9 @@ if (mysqli_num_rows($result) > 0) {
             </div>
         </div>
         <hr />';
-    }
+  }
 } else {
-    $questionLoop = "No Questions found.";
+  $questionLoop = "No Questions found.";
 }
 
 // Close the database connection
@@ -88,83 +88,86 @@ mysqli_close($conn);
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pace Developers Community</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
-    <link rel="stylesheet" href="../style.css" />
-    <style>
-          .active_side{
-  color: teal;
-}
-.answer-btn a{
-  color: white;
-  text-decoration: none;
-}
-.statement {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  
-}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEVCOM - Developers Community</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a81368914c.js"></script>
 
-    </style>
-  </head>
-  <body>
-    <!-- header nav start  -->
-    <div class="navbar">
-      <div class="logo">
-        <img src="../images/logo.png" alt="logo failed to load" height="100" />
-      </div>
-      <div class="nav">
-        <ul>
-          <li>
-            <a class="link" href="/">Home</a>
-          </li>
-          <li>
-            <a class="link" href="/about">About</a>
-          </li>
-          <li>
-            <a class="link" href="/contact">Contact Us</a>
-          </li>
-          <li>
-            <!-- Rendered conditionally based on localStorage token -->
-            <a class="link" href="/blog">
-              <i class="fa fa-user"></i> <?php echo $name ?>
-            </a>
-          </li>            
-        </ul>
-      </div>
-      <div class="search">
-        <input type="text" placeholder="Search" />
-      </div>
-      <div class="search-btn">
-        <button>
-          <i class="fa fa-search"></i>
-        </button>
-      </div>
-      <div class="login-btn">
-      <?php echo $loginBtn; ?>
-        
-      </div>
-      <div class="signup-btn">
-        <?php echo $loggedInBtn; ?>
-      </div>
-    
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .active_side {
+      color: #FFBF00;
+    }
+
+    .answer-btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .statement {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- header nav start  -->
+  <div class="navbar">
+    <div class="logo">
+      <img src="../images/logo.png" alt="logo failed to load" height="100" />
     </div>
-<!-- header nav close -->
+    <div class="nav">
+      <ul>
+        <li>
+          <a class="link" href="/">Home</a>
+        </li>
+        <li>
+          <a class="link" href="/about">About</a>
+        </li>
+        <li>
+          <a class="link" href="/contact">Contact Us</a>
+        </li>
+        <li>
+          <!-- Rendered conditionally based on localStorage token -->
+          <a class="link" href="/blog">
+            <i class="fa fa-user"></i> <?php echo $name ?>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Search" />
+    </div>
+    <div class="search-btn">
+      <button>
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+    <div class="login-btn">
+      <?php echo $loginBtn; ?>
+
+    </div>
+    <div class="signup-btn">
+      <?php echo $loggedInBtn; ?>
+    </div>
+
+  </div>
+  <!-- header nav close -->
 
 
 
-<!-- side nav start -->
-<div class="menu-bars">
+  <!-- side nav start -->
+  <div class="menu-bars">
     <i class="fa fa-bars"></i>
   </div>
   <div class="navside">
@@ -182,18 +185,24 @@ mysqli_close($conn);
         </a>
       </li>
       <li>
-        <a class="sidelink" href="#">
+        <a class="sidelink " href="./community.php">
           <i class="fa fa-users"></i> Community
         </a>
       </li>
       <li>
-        <i class="fa fa-user"></i> Admins
+        <a class="sidelink " href="./admins.php">
+          <i class="fa fa-user"></i> Admins
+        </a>
       </li>
       <li>
-        <i class="fa fa-tags"></i> Tags
+        <a class="sidelink " href="./tags.php">
+          <i class="fa fa-tags"></i> Tags
+        </a>
       </li>
       <li>
-        <i class="fa fa-file-code-o">..</i> Docs
+        <a class="sidelink " href="./docs.php">
+          <i class="fa fa-file-code-o"></i> Docs...
+        </a>
       </li>
     </ul>
     <div class="login-btnnav">
@@ -220,17 +229,17 @@ mysqli_close($conn);
 
   <!-- questions start  -->
   <div class="something">
-        <h1>Questions</h1>
-    </div>
-<?php 
-        echo $questionLoop;
-?>
-    <!-- Rendered Notes -->
-    <!-- You can use server-side templating or JavaScript to dynamically generate the QueItem components -->
-    <!-- Example static HTML -->
-    <div class="que-item">
-        <!-- QueItem HTML -->
-    </div>
+    <h1>Questions</h1>
+  </div>
+  <?php
+  echo $questionLoop;
+  ?>
+  <!-- Rendered Notes -->
+  <!-- You can use server-side templating or JavaScript to dynamically generate the QueItem components -->
+  <!-- Example static HTML -->
+  <div class="que-item">
+    <!-- QueItem HTML -->
+  </div>
 
   <!-- questions end  -->
 
@@ -240,7 +249,7 @@ mysqli_close($conn);
   <!-- footer start  -->
   <div class="footer">
     <div class="logof">
-      <img src="../../images/logo.png" alt="" />
+      <img src="../images/logo.png" alt="" />
       <p>
         PDC Forum is a social questions and Answer Engine. Which will help you
         to solve your problem and connect with other people.
@@ -285,7 +294,8 @@ mysqli_close($conn);
   </div>
 
   <!-- footer end  -->
-<?php echo $askBtn; ?>
+  <?php echo $askBtn; ?>
 
-  </body>
+</body>
+
 </html>

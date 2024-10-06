@@ -65,7 +65,7 @@ $userID ='not logged in';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pace Developers Community</title>
+    <title>DEVCOM - Developers Community</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
@@ -102,7 +102,7 @@ $userID ='not logged in';
   display: flex;
   cursor: pointer;
   border: none;
-  background-color: teal;
+  background-color: #FFBF00;
   height: 35px;
   width: 80px;
   /* position: absolute; */
@@ -120,7 +120,7 @@ text-decoration: none;
 .login-btnnav a{
   display: flex;
   cursor: pointer;
-  border: 3px solid teal;
+  border: 3px solid #FFBF00;
   background-color:#e6e6fabb;
   height: 35px;
   width: 80px;
@@ -128,7 +128,7 @@ text-decoration: none;
   /* right: 100px; */
   margin: 10px;
   border-radius: 15px;
-  color: teal;
+  color: #FFBF00;
 font-size: 17px;
 font-weight: bold;
 justify-content: center;
@@ -193,7 +193,7 @@ text-decoration: none;}
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 10px;
-  color: teal;
+  color: #FFBF00;
 
 }
 
@@ -210,7 +210,7 @@ text-decoration: none;}
 
 .detail-label {
   font-weight: bold;
-  color: teal;
+  color: #FFBF00;
 }
 .detButtons{
   display: flex;
@@ -221,7 +221,7 @@ text-decoration: none;}
 }
 .detButtons a{
 color: white;
-background: teal;
+background: #FFBF00;
 text-decoration: none;
 padding: 15px 25px;
 margin: 20px;

@@ -14,7 +14,7 @@
     min-width: 96%;
     background: rgb(209, 209, 209);
     border-radius: 5px;
-    outline:2px solid teal;
+    outline:2px solid #FFBF00;
     font-size: 15px;
     color: #000;
 }
@@ -25,9 +25,9 @@
     font-size: 15px;
     font-weight: bold;
     color: lavender;
-    background: teal;
+    background: #FFBF00;
     border: none;
 }
 strong{
-    color: teal;
+    color: #FFBF00;
 }
